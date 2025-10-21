@@ -1,0 +1,95 @@
+/* Estilos personalizados - aspecto "Kali" oscuro y terminal */
+:root{
+  --kali-bg:#0b0f18;        /* fondo principal */
+  --kali-panel:#071021;     /* panel/card */
+  --kali-accent:#00a0ff;    /* azul brillante */
+  --kali-muted:#9aa6b2;     /* texto secundario */
+  --kali-glow: 0 6px 24px rgba(0,160,255,0.08);
+  --kali-border: rgba(255,255,255,0.04);
+}
+
+body.bg-kali{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0,160,255,0.035), transparent 8%),
+              radial-gradient(900px 500px at 90% 90%, rgba(0,160,255,0.02), transparent 10%),
+              var(--kali-bg);
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  color: #dbe7ee;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header badge */
+.kali-badge{
+  background: linear-gradient(180deg, rgba(0,160,255,0.15), rgba(0,160,255,0.08));
+  color: var(--kali-accent);
+  border: 1px solid rgba(0,160,255,0.14);
+  padding: 6px 10px;
+  font-weight:700;
+  letter-spacing:1px;
+  border-radius:6px;
+  box-shadow: 0 4px 20px rgba(0,160,255,0.06);
+}
+
+/* Card / panel */
+.kali-card{
+  background: linear-gradient(180deg, rgba(10,14,20,0.9), var(--kali-panel));
+  border: 1px solid var(--kali-border);
+  border-radius: 12px;
+  box-shadow: var(--kali-glow);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+/* Labels */
+.kali-label{
+  color: var(--kali-muted);
+  font-size: .95rem;
+}
+
+/* Inputs */
+.kali-input{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #e7f6ff;
+  box-shadow: none;
+  border-right: 0;
+}
+.kali-input::placeholder{ color: rgba(255,255,255,0.22); }
+
+/* Buttons */
+.kali-btn{
+  background: linear-gradient(180deg, var(--kali-accent), rgba(0,128,220,0.92));
+  color: #041021;
+  border: none;
+  padding: 0.56rem 0.9rem;
+  font-weight:700;
+  letter-spacing:0.4px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 6px 18px rgba(0,160,255,0.12), inset 0 -2px 0 rgba(0,0,0,0.15);
+  transition: transform .08s ease, box-shadow .12s ease, filter .12s;
+}
+.kali-btn:hover{ transform: translateY(-1px); filter:brightness(1.03); }
+.kali-btn:active{ transform: translateY(0); box-shadow: none; }
+
+/* Output boxes (resultado) */
+.kali-output{
+  min-height:36px;
+  padding:8px 10px;
+  border-radius:6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));
+  border: 1px dashed rgba(255,255,255,0.03);
+  color: #bfe9ff;
+  font-size: .95rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+/* Small visual polish */
+.kali-card hr{ border-top:1px dashed rgba(255,255,255,0.03); }
+.kali-card footer { color: var(--kali-muted); }
+
+/* Responsive tweaks */
+@media (max-width:420px){
+  .kali-btn{ font-size:.86rem; padding:.46rem .6rem; }
+  .kali-badge{ padding:5px 8px; font-size:.86rem; }
+}
